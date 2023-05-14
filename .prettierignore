@@ -5,4 +5,7 @@ coverage
 build
 *.hbs
 *.d.ts
+site/dist_site
 site/styled-system
+.github
+.changeset

@@ -9,14 +9,14 @@
   </h1>
     <br />
     <br />
-    <a href="https://www.npmjs.com/package/css-picons?style=for-the-badge">
-       <img src="https://img.shields.io/npm/v/css-picons.svg?style=for-the-badge" alt="npm package" />
+    <a href="https://www.npmjs.com/package/@css-picons/config?style=for-the-badge">
+       <img src="https://img.shields.io/npm/v/@css-picons/config.svg?style=for-the-badge" alt="npm package" />
     </a>
-    <a href="https://www.npmjs.com/package/css-picons?style=for-the-badge">
-      <img src="https://img.shields.io/npm/dw/css-picons.svg?style=for-the-badge" alt="npm  downloads" />
+    <a href="https://www.npmjs.com/package/@css-picons/config?style=for-the-badge">
+      <img src="https://img.shields.io/npm/dw/@css-picons/config.svg?style=for-the-badge" alt="npm  downloads" />
     </a>
 <a>
-    <img alt="NPM" src="https://img.shields.io/npm/l/css-picons?style=for-the-badge">
+    <img alt="NPM" src="https://img.shields.io/npm/l/@css-picons/config?style=for-the-badge">
 </a>
 
 <a>
