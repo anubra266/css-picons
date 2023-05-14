@@ -1,0 +1,34 @@
+{
+  "name": "css-picons",
+  "version": "0.0.1",
+  "description": "Pure CSS icons for css panda",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "pnpm build-fast",
+    "dev": "pnpm -r --parallel --filter=./packages/** dev",
+    "build-fast": "pnpm -r --parallel --filter=./packages/** build-fast",
+    "build": "pnpm -r --parallel --filter=./packages/** build",
+    "check": "pnpm build && pnpm typecheck && pnpm lint && pnpm test run",
+    "clean": "pnpm -r --parallel exec rm -rf dist .turbo *.log",
+    "reset": "pnpm -r --parallel exec rm -rf node_modules && rm -rf node_modules",
+    "lint": "eslint packages --ext .ts",
+    "prettier": "prettier --check .",
+    "prettier-fix": "prettier --write .",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "Abraham A. <anubra266>",
+  "license": "MIT",
+  "dependencies": {
+    "@changesets/changelog-github": "0.4.8",
+    "@changesets/cli": "2.26.1",
+    "@types/node": "20.1.1",
+    "@typescript-eslint/eslint-plugin": "5.59.5",
+    "@typescript-eslint/parser": "5.59.5",
+    "concurrently": "^8.0.1",
+    "prettier": "2.8.8",
+    "tsup": "6.7.0",
+    "typescript": "5.0.4",
+    "vitest": "0.31.0"
+  }
+}
