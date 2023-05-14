@@ -1,5 +1,13 @@
 # @css-picons/variants
 
+## 0.0.1
+
+### Patch Changes
+
+- 4a4ffa9: Bump packages
+- Updated dependencies [4a4ffa9]
+  - @css-picons/types@0.0.1
+
 ## 0.0.2
 
 ### Patch Changes
