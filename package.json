@@ -16,7 +16,7 @@
     "reset": "pnpm -r --parallel exec rm -rf node_modules && rm -rf node_modules",
     "lint": "eslint packages --ext .ts",
     "prettier": "prettier --check .",
-    "prettier-fix": "prettier --write .",
+    "prettier-fix": "prettier --write ."
   },
   "keywords": [],
   "author": "Abraham A. <anubra266>",
