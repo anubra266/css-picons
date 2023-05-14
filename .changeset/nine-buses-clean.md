@@ -4,4 +4,4 @@
 '@css-picons/variants': patch
 ---
 
-First release
+Initial release
