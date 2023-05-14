@@ -40,7 +40,7 @@ Use any icons with Pure CSS in [CSS Panda](https://github.com/chakra-ui/panda). 
 ## Install
 
 ```sh
-npm i -D css-picons @iconify-json/[the-collection-you-want]
+npm i -D @css-picons/config @iconify-json/[the-collection-you-want]
 ```
 
 We use [Iconify](https://iconify.design) as our data source of icons. You need to install the corresponding iconset in
@@ -59,10 +59,10 @@ npm i -D @iconify/json
 
 ## Configuration
 
-In your `panda.config.*` file, import `cssPicons` from `css-picons`, then add it to presets
+In your `panda.config.*` file, import `cssPicons` from `@css-picons/config`, then add it to presets
 
 ```ts
-import { cssPicons } from 'css-picons'
+import { cssPicons } from '@css-picons/config'
 export default defineConfig({
   presets: [
     // ...
@@ -74,7 +74,7 @@ export default defineConfig({
 })
 ```
 
-Then make sure your `theme` is extendable
+Then make sure your `theme` is extendable, if you have configured it.
 
 ```js
 // panda.config.*
@@ -94,7 +94,7 @@ Now you can use it in your components in all the ways `css-panda` allows through
 from your design system. The icon name follows the format `<collection>:<name>`
 
 ```js
-import { icon } from '../design-system/recipes'
+import { icon } from '../panda/recipes'
 return (
   <div
     className={cx(
@@ -157,7 +157,7 @@ return <AppIcon name="mdi:emoticon-happy" />
 You tell `panda` to watch the external component by using the `jsx` key in the config.
 
 ```ts
-import { cssPicons } from 'css-picons'
+import { cssPicons } from '@css-picons/config'
 export default defineConfig({
   presets: [
     // ...
@@ -170,7 +170,7 @@ export default defineConfig({
 ```
 
 **Note:** Panda automatically tracks components named as the capitalized version of the identifier. e.g. If your
-identifier is daocons`, a component called `Daocons` that consumes it will be automatically tracked.
+identifier is daocons, a component called `Daocons` that consumes it will be automatically tracked.
 
 ### Identifier
 
@@ -178,7 +178,7 @@ By default, you export `icon` from recipes which is then consumed to render the 
 config with the `identifier` key.
 
 ```ts
-import { cssPicons } from 'css-picons'
+import { cssPicons } from '@css-picons/config'
 export default defineConfig({
   presets: [
     // ...
@@ -193,7 +193,7 @@ export default defineConfig({
 Then export and use the new identifier in your project instead.
 
 ```js
-import { cssIcon } from '../design-system/recipes'
+import { cssIcon } from '../panda/recipes'
 return (
   <div
     className={cx(
@@ -213,7 +213,7 @@ You can provide extra styles to control the default behavior of the icons. You c
 inline by default by the following example:
 
 ```ts
-import { cssPicons } from 'css-picons'
+import { cssPicons } from '@css-picons/config'
 export default defineConfig({
   presets: [
     // ...
