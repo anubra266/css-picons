@@ -1,5 +1,14 @@
 # @css-picons/variants
 
+## 0.0.3
+
+### Patch Changes
+
+- 377f0a2: Merge custom collections into `collections` key
+- Updated dependencies [377f0a2]
+- Updated dependencies [98f601d]
+  - @css-picons/types@0.0.3
+
 ## 0.0.2
 
 ### Patch Changes

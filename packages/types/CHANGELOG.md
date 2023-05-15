@@ -1,5 +1,12 @@
 # @css-picons/types
 
+## 0.0.3
+
+### Patch Changes
+
+- 377f0a2: Merge custom collections into `collections` key
+- 98f601d: Allow all configurations permitted in recipes by panda css
+
 ## 0.0.2
 
 ### Patch Changes
