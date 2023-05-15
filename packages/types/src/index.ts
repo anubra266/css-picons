@@ -17,6 +17,7 @@ export interface CssPiconsOptions {
    */
   identifier?: string
   collections: Collection[]
+  customCollection: Record<string, `<svg${string}`>
   /**
    * Extra styles applied to the icons by default
    *

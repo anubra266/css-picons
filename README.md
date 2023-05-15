@@ -259,17 +259,39 @@ export default defineConfig({
 })
 ```
 
+### Custom collections
+
+You can also provide your own custom collections using `customCollection`
+
+```ts
+export default defineConfig({
+  presets: [
+    // ...
+    cssPicons({
+      // ...
+      customCollection: {
+        circle: '<svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50"></circle></svg>',
+      },
+    }),
+  ],
+})
+```
+
+Then use it through the `custom` icon name.
+
+```js
+import { icon } from '../panda/recipes'
+return <div className={icon({ name: 'custom:circle' })} />
+```
+
 ## TODO
 
 Features to add and document
 
-- [ ] Allow passing collection as `string` to be `require()`d, as object containing svg, as function returning any of
-      this. Could be a dynamic import resolving to one of them too.
-  ```js
-  carbon: () => import('@iconify-json/carbon/icons.json').then(i => i.default as any),
-  ```
-- [ ] Allow custom collections - [guide](https://github.com/unocss/unocss/tree/main/packages/preset-icons/#nodejs)
-
 - [ ] Icon customizations -
       [guide](https://github.com/unocss/unocss/tree/main/packages/preset-icons/#icon-customizations)
 - [ ] Fetching from CDN - [guide](https://github.com/unocss/unocss/tree/main/packages/preset-icons/#cdn)
+
+```
+
+```

@@ -6,6 +6,9 @@ export default defineConfig({
     '@pandacss/dev/presets',
     cssPicons({
       collections: ['mdi', 'cryptocurrency-color'],
+      customCollection: {
+        circle: '<svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50"></circle></svg>',
+      },
       extraStyles: {
         verticalAlign: 'middle',
         display: 'inline-block',

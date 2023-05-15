@@ -9,8 +9,7 @@
   "author": "Abraham - anubra266 <anubra266@gmail.com>",
   "scripts": {
     "build": "tsup src/index.ts --format=cjs,esm --shims --dts",
-    "build-fast": "tsup src/index.ts --format=cjs,esm --shims --no-dts",
-    "dev": "pnpm build-fast --watch",
+    "dev": "pnpm build --watch",
     "test": "echo \"Error: no test specified\""
   },
   "files": [

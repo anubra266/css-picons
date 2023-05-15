@@ -4,9 +4,8 @@
   "description": "Pure CSS icons for css panda",
   "main": "index.js",
   "scripts": {
-    "prepare": "pnpm build-fast",
+    "prepare": "pnpm build",
     "dev": "pnpm -r --parallel --filter=./packages/** dev",
-    "build-fast": "pnpm -r --parallel --filter=./packages/** build-fast",
     "build:types": "pnpm --filter=./packages/types build",
     "build:variants": "pnpm --filter=./packages/variants build",
     "build:config": "pnpm --filter=./packages/config build",

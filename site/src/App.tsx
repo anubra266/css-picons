@@ -24,6 +24,7 @@ function App() {
       <Icon name="cryptocurrency-color:aave" />
       <Icon name="mdi:account-alert-outline" />
       <Icon name="mdi:alpha-e" color="red.400" />
+      <Icon name="custom:circle" />
     </div>
   )
 }
