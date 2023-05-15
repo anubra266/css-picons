@@ -170,7 +170,8 @@ export default defineConfig({
 ```
 
 **Note:** Panda automatically tracks components named as the capitalized version of the identifier. e.g. If your
-identifier is daocons, a component called `Daocons` that consumes it will be automatically tracked.
+identifier is daocons, a component called `Daocons` that consumes it will be automatically tracked. In this case, we
+automatically track components named `Icon`.
 
 ### Identifier
 
