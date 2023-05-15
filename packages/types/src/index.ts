@@ -4,13 +4,13 @@ import type iconifyCollections from '@iconify/collections/collections.json'
 export type CustomCollection = Record<string, `<svg${string}</svg>`>
 export type Collection = keyof typeof iconifyCollections | [string, CustomCollection]
 
-export interface CssPiconsOptions {
+export interface CssPiconsOptions extends Omit<RecipeConfig<{}>, 'name' | 'description' | 'base'> {
   /**
    * The jsx elements to track that consumes the exposed recipe.
    *
    * @default Icon
    */
-  jsx?: RecipeConfig<any>['jsx']
+  jsx?: RecipeConfig<{}>['jsx']
   /**
    * The identifier for the exposed recipe
    *
@@ -23,7 +23,7 @@ export interface CssPiconsOptions {
    *
    * @default {}
    */
-  extraStyles?: SystemStyleObject
+  styles?: SystemStyleObject
   /**
    * Mode of generated CSS icons.
    *

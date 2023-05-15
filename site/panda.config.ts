@@ -15,8 +15,7 @@ export default defineConfig({
           },
         ],
       ],
-
-      extraStyles: {
+      styles: {
         verticalAlign: 'middle',
         display: 'inline-block',
       },

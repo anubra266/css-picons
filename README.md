@@ -220,7 +220,7 @@ export default defineConfig({
     // ...
     cssPicons({
       // ...
-      extraStyles: {
+      styles: {
         verticalAlign: 'middle',
         display: 'inline-block',
       },
