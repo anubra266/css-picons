@@ -261,7 +261,8 @@ export default defineConfig({
 
 ### Custom collections
 
-You can also provide your own custom collections using `customCollection`
+You can also provide your own custom collections by passing a tuple whose first item is the collection name, and the
+second is the collection icons.
 
 ```ts
 export default defineConfig({
@@ -269,9 +270,13 @@ export default defineConfig({
     // ...
     cssPicons({
       // ...
-      customCollection: {
-        circle: '<svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50"></circle></svg>',
-      },
+      collections: [
+        // ...
+        'custom',
+        {
+          circle: '<svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50"></circle></svg>',
+        },
+      ],
     }),
   ],
 })
@@ -291,7 +296,3 @@ Features to add and document
 - [ ] Icon customizations -
       [guide](https://github.com/unocss/unocss/tree/main/packages/preset-icons/#icon-customizations)
 - [ ] Fetching from CDN - [guide](https://github.com/unocss/unocss/tree/main/packages/preset-icons/#cdn)
-
-```
-
-```

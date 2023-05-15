@@ -1,7 +1,8 @@
 import type { RecipeConfig, SystemStyleObject } from '@pandacss/types'
 import type iconifyCollections from '@iconify/collections/collections.json'
 
-export type Collection = keyof typeof iconifyCollections
+export type CustomCollection = Record<string, `<svg${string}</svg>`>
+export type Collection = keyof typeof iconifyCollections | [string, CustomCollection]
 
 export interface CssPiconsOptions {
   /**
@@ -17,7 +18,6 @@ export interface CssPiconsOptions {
    */
   identifier?: string
   collections: Collection[]
-  customCollection: Record<string, `<svg${string}`>
   /**
    * Extra styles applied to the icons by default
    *
