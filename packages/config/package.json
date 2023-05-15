@@ -10,7 +10,8 @@
   "scripts": {
     "build": "tsup src/index.ts --format=cjs,esm --shims --dts",
     "build-fast": "tsup src/index.ts --format=cjs,esm --shims --no-dts",
-    "dev": "pnpm build-fast --watch"
+    "dev": "pnpm build-fast --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "files": [
     "dist"
