@@ -39,7 +39,7 @@ jobs:
         uses: actions/configure-pages@v2
       - name: Build with Vite
         run: |
-          cd site && pnpm build && cd ../
+          ls
         working-directory: ${{ env.SITE_PATH }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
