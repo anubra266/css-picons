@@ -1,5 +1,5 @@
 import { css, cx } from '../styled-system/css'
-import { stack } from '../styled-system/patterns'
+import { flex, stack } from '../styled-system/patterns'
 import { icon, IconVariantProps } from '../styled-system/recipes'
 import { SystemStyleObject } from '../styled-system/types'
 
@@ -21,9 +21,15 @@ function Icon({ name, ...rest }: IconProps) {
 function App() {
   return (
     <div className={stack({ padding: '40px', align: 'stretch' })}>
+      cryptocurrency-color:aave
       <Icon name="cryptocurrency-color:aave" />
+      mdi:account-alert-outline
       <Icon name="mdi:account-alert-outline" />
+      <span className={flex({ gap: 1 })}>
+        mdi:alpha-e <i>(color: red.400)</i>
+      </span>
       <Icon name="mdi:alpha-e" color="red.400" />
+      custom:circle
       <Icon name="custom:circle" />
     </div>
   )
