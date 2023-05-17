@@ -20,7 +20,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@iconify/collections": "^1.0.238"
+    "@iconify/collections": "^1.0.238",
+    "@iconify/types": "^2.0.0"
   },
   "devDependencies": {
     "@pandacss/types": "dev"

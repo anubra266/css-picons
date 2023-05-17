@@ -53,10 +53,13 @@ importers:
       '@iconify/collections':
         specifier: ^1.0.238
         version: 1.0.238
+      '@iconify/types':
+        specifier: ^2.0.0
+        version: 2.0.0
     devDependencies:
       '@pandacss/types':
         specifier: dev
-        version: 0.0.0-dev-20230517212035(typescript@5.0.4)
+        version: 0.0.0-dev-20230517213021(typescript@5.0.4)
 
   packages/variants:
     dependencies:
@@ -1200,6 +1203,19 @@ packages:
       - typescript
     dev: true
 
+  /@pandacss/extractor@0.0.0-dev-20230517213021(typescript@5.0.4):
+    resolution: {integrity: sha512-nRpKaHcyJ3fr+42XtSWKnj78cSNK5/guoYR/NEW56CF/K5qz3J9+cQsfaf2bAaM+LUSVAqR1Xl7nzuSDgzT0wQ==}
+    dependencies:
+      '@pandacss/logger': 0.0.0-dev-20230517213021
+      lil-fp: 1.4.5
+      ts-evaluator: 1.1.0(typescript@5.0.4)
+      ts-morph: 18.0.0
+      ts-pattern: 4.3.0
+    transitivePeerDependencies:
+      - jsdom
+      - typescript
+    dev: true
+
   /@pandacss/generator@0.0.0-dev-20230517212035(typescript@5.0.4):
     resolution: {integrity: sha512-XEg0v2LUhVct9Isi1ewNGygaC1tRvQCznayoxm1cZKK0FmBABw4pOml4w7+X/qdJ9SWAeVLOWx212qqF+kRvrg==}
     dependencies:
@@ -1226,6 +1242,13 @@ packages:
 
   /@pandacss/logger@0.0.0-dev-20230517212035:
     resolution: {integrity: sha512-IEFWgGWB6p5OOJXkn/haV6IKRE0MgHCc3UE35R3IHDTIcwUaxJPHDIebyB65xvPBVXv/XVKAlGXZOaZI7wNdLw==}
+    dependencies:
+      kleur: 4.1.5
+      lil-fp: 1.4.5
+    dev: true
+
+  /@pandacss/logger@0.0.0-dev-20230517213021:
+    resolution: {integrity: sha512-CqHBKvc6YmKUEo3IP+tDhzqBPwkzuOxKmcX6RxJX4Qt1+Jr+WZdR4zlXbmUNL1Wrh2RmsW0597idOo8XXV/t3w==}
     dependencies:
       kleur: 4.1.5
       lil-fp: 1.4.5
@@ -1304,6 +1327,15 @@ packages:
     resolution: {integrity: sha512-tXXME73M3xCHoFlBijaACKSlbW5pAQK5s7oP67zNIelej3vUofqsKbtpuDZD8C+JUK9xp5ohY+k5/aAqAVRd5Q==}
     dependencies:
       '@pandacss/extractor': 0.0.0-dev-20230517212035(typescript@5.0.4)
+    transitivePeerDependencies:
+      - jsdom
+      - typescript
+    dev: true
+
+  /@pandacss/types@0.0.0-dev-20230517213021(typescript@5.0.4):
+    resolution: {integrity: sha512-ooE53vmomaFzFNibdgnc6wXTpd2M9buHJedS3dothwzdmz+kHytvUsWWy6WGwGcRftjFvfeMPyL4xIFXD/aA0Q==}
+    dependencies:
+      '@pandacss/extractor': 0.0.0-dev-20230517213021(typescript@5.0.4)
     transitivePeerDependencies:
       - jsdom
       - typescript
