@@ -261,8 +261,13 @@ export default defineConfig({
 
 ### Custom collections
 
-You can also provide your own custom collections by passing a tuple whose first item is the collection name, and the
-second is the collection icons.
+You can also provide your own custom collections by passing a tuple.
+
+The **first** item in the tuple is the collection's name.
+
+The **second** can either be a function or an object.
+
+**Basic example**
 
 ```ts
 export default defineConfig({
@@ -272,27 +277,208 @@ export default defineConfig({
       // ...
       collections: [
         // ...
-        'custom',
-        {
-          circle: '<svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50"></circle></svg>',
-        },
+        [
+          'custom',
+          {
+            circle: '<svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50"></circle></svg>',
+          },
+        ],
       ],
     }),
   ],
 })
 ```
 
-Then use it through the `custom` icon name.
+Then use it through the `custom` icon name:
 
 ```js
 import { icon } from '../panda/recipes'
 return <div className={icon({ name: 'custom:circle' })} />
 ```
 
-## TODO
+You can also provide a function that resolves to a string:
 
-Features to add and document
+**Read from file**
 
-- [ ] Icon customizations -
-      [guide](https://github.com/unocss/unocss/tree/main/packages/preset-icons/#icon-customizations)
-- [ ] Fetching from CDN - [guide](https://github.com/unocss/unocss/tree/main/packages/preset-icons/#cdn)
+```ts
+export default defineConfig({
+  presets: [
+    // ...
+    cssPicons({
+      // ...
+      collections: [
+        // ...
+        [
+          'custom',
+          {
+            vite: () => fs.readFile('./public/vite.svg', 'utf-8'),
+          },
+        ],
+      ],
+    }),
+  ],
+})
+```
+
+Usage:
+
+```js
+import { icon } from '../panda/recipes'
+return <div className={icon({ name: 'custom:vite' })} />
+```
+
+**Fetch icon svg from a remote server**
+
+```ts
+export default defineConfig({
+  presets: [
+    // ...
+    cssPicons({
+      // ...
+      collections: [
+        // ...
+        [
+          'solar',
+          {
+            'airbuds-outline': async () => {
+              return await fetch('https://api.iconify.design/solar:airbuds-outline.svg?color=%23888888').then((res) =>
+                res.text(),
+              )
+            },
+          },
+        ],
+      ],
+    }),
+  ],
+})
+```
+
+Usage:
+
+```js
+import { icon } from '../panda/recipes'
+return <div className={icon({ name: 'solar:airbuds-outline' })} />
+```
+
+**Iconify JSON or function returning iconify JSON**
+
+```ts
+import feIconsData from '@iconify-json/fe/icons.json'
+import phIconsData from '@iconify-json/ph/icons.json'
+
+export default defineConfig({
+  presets: [
+    // ...
+    cssPicons({
+      // ...
+      collections: [
+        // ...
+        ['fe', feIconsData],
+        ['ph', () => phIconsData],
+      ],
+    }),
+  ],
+})
+```
+
+Usage:
+
+```js
+import { icon } from '../panda/recipes'
+return <div className={icon({ name: 'fe:check-verified' })} />
+return <div className={icon({ name: 'ph:alien' })} />
+```
+
+**Dynamic import**
+
+```ts
+export default defineConfig({
+  presets: [
+    // ...
+    cssPicons({
+      // ...
+      collections: [
+        // ...
+        ['carbon', () => import('@iconify-json/carbon/icons.json').then((i) => i.default as any)],
+      ],
+    }),
+  ],
+})
+```
+
+Usage:
+
+```js
+import { icon } from '../panda/recipes'
+return <div className={icon({ name: 'carbon:build-tool' })} />
+```
+
+**Fetch icons data from a remote server**
+
+```ts
+export default defineConfig({
+  presets: [
+    // ...
+    cssPicons({
+      // ...
+      collections: [
+        // ...
+        [
+          'circle-flags',
+          async () => {
+            //* fetch iconifyJson from a remote server:
+            //! We use node-fetch package because we can't access the native fetch
+            return await fetch(
+              'https://raw.githubusercontent.com/iconify/icon-sets/master/json/circle-flags.json',
+            ).then((res) => res.json())
+          },
+        ],
+      ],
+    }),
+  ],
+})
+```
+
+Usage:
+
+```js
+import { icon } from '../panda/recipes'
+return <div className={icon({ name: 'circle-flags:ng' })} />
+```
+
+### Transforming icons
+
+We provide a transform method which lets you transform icons when loading, for example adding fill attribute with
+currentColor.
+
+```js
+export default defineConfig({
+  presets: [
+    // ...
+    cssPicons({
+      // ...
+      transform(svg) {
+        return svg.replace(/#fff/, 'currentColor')
+      },
+    }),
+  ],
+})
+```
+
+We also provide the `collection` and `icon` so you can streamline your transformations.
+
+```js
+export default defineConfig({
+  presets: [
+    // ...
+    cssPicons({
+      // ...
+      transform(svg) {
+        // do not apply fill to this icons on this collection
+        if (collection === 'custom' && icon === 'circle') return svg
+        return svg.replace(/#fff/, 'currentColor')
+      },
+    }),
+  ],
+})
+```

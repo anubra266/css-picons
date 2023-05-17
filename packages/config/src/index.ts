@@ -1,13 +1,10 @@
 import { definePreset } from '@pandacss/dev'
-import type { Preset } from '@pandacss/types'
-
-import type { CssPiconsOptions } from '@css-picons/types'
+import type { CssPiconsOptions, Preset } from '@css-picons/types'
 import { getNameVariants } from '@css-picons/variants'
 
-export const cssPicons = (options: CssPiconsOptions): Preset => {
+export const cssPicons = async (options: CssPiconsOptions): Promise<Preset> => {
   const { identifier = 'icon', styles, variants: variantsConfig, ...rest } = options
-
-  const nameVariants = getNameVariants(options)
+  const nameVariants = await getNameVariants(options)
 
   const base = Object.assign(
     {
@@ -33,8 +30,10 @@ export const cssPicons = (options: CssPiconsOptions): Preset => {
 
   return definePreset({
     theme: {
-      recipes: {
-        [identifier]: recipe,
+      extend: {
+        recipes: {
+          [identifier]: recipe,
+        },
       },
     },
   })

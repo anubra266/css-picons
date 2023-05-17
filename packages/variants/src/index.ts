@@ -1,16 +1,17 @@
 import type { CssPiconsOptions } from '@css-picons/types'
 import { encodeSvgForCss } from '@iconify/utils'
-import { resolveIcon } from './resolve-icon'
+import { resolveIcons } from './resolve-icons'
 
-export const getNameVariants = ({ collections, mode = 'auto' }: CssPiconsOptions) => {
-  return collections.flatMap(resolveIcon).reduce((acc, nxt) => {
-    if (!nxt[2]) return { ...acc }
-
-    const name = `${nxt[0]}:${nxt[1]}` as string
+export const getNameVariants = async ({ collections, transform, mode = 'auto' }: CssPiconsOptions) => {
+  const collectionsMap = await Promise.all(collections.map(resolveIcons))
+  return collectionsMap.flat().reduce((acc, nxt) => {
+    if (!nxt.svg) return { ...acc }
+    const name = `${nxt.collection}:${nxt.icon}` as string
     const maskModeName = `${name}?mask`
     const bgModeName = `${name}?bg`
 
-    const { styles, maskStyles, backgroundStyles } = buildVariants(nxt[2], mode)
+    const svg = transform?.(nxt.svg, nxt.collection, nxt.icon) ?? nxt.svg
+    const { styles, maskStyles, backgroundStyles } = buildVariants(svg, mode)
 
     return Object.assign(acc, {
       [name]: styles,

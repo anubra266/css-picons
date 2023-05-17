@@ -21,16 +21,28 @@ function Icon({ name, ...rest }: IconProps) {
 function App() {
   return (
     <div className={stack({ padding: '40px', align: 'stretch' })}>
-      cryptocurrency-color:aave
-      <Icon name="cryptocurrency-color:aave" />
       mdi:account-alert-outline
       <Icon name="mdi:account-alert-outline" />
+      cryptocurrency-color:aave
+      <Icon name="cryptocurrency-color:aave" />
       <span className={flex({ gap: 1 })}>
         mdi:alpha-e <i>(color: red.400)</i>
       </span>
       <Icon name="mdi:alpha-e" color="red.400" />
       custom:circle
       <Icon name="custom:circle" />
+      custom:vite
+      <Icon name="custom:vite" />
+      solar:airbuds-outline
+      <Icon name="solar:airbuds-outline" />
+      fe:check-verified
+      <Icon name="fe:check-verified" />
+      carbon:build-tool
+      <Icon name="carbon:build-tool" />
+      ph:alien
+      <Icon name="ph:alien" />
+      circle-flags:ng
+      <Icon name="circle-flags:ng" />
     </div>
   )
 }

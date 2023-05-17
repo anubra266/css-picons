@@ -24,7 +24,6 @@
     "@css-picons/variants": "workspace:*"
   },
   "devDependencies": {
-    "@pandacss/dev": "dev",
-    "@pandacss/types": "dev"
+    "@pandacss/dev": "dev"
   }
 }
