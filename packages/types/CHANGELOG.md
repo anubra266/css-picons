@@ -1,5 +1,12 @@
 # @css-picons/types
 
+## 0.0.4
+
+### Patch Changes
+
+- 6892674: - Add transform method for mutating icon svgs.
+  - Add more ways of loading icons.
+
 ## 0.0.3
 
 ### Patch Changes
