@@ -330,6 +330,9 @@ return <div className={icon({ name: 'custom:vite' })} />
 **Fetch icon svg from a remote server**
 
 ```ts
+// Native fetch is not defined in the node process
+import fetch from 'node-fetch'
+
 export default defineConfig({
   presets: [
     // ...
@@ -416,6 +419,8 @@ return <div className={icon({ name: 'carbon:build-tool' })} />
 **Fetch icons data from a remote server**
 
 ```ts
+// Native fetch is not defined in the node process
+
 export default defineConfig({
   presets: [
     // ...

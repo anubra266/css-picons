@@ -23,11 +23,11 @@ function App() {
     <div className={stack({ padding: '40px', align: 'stretch' })}>
       mdi:account-alert-outline
       <Icon name="mdi:account-alert-outline" />
-      cryptocurrency-color:aave
-      <Icon name="cryptocurrency-color:aave" />
       <span className={flex({ gap: 1 })}>
         mdi:alpha-e <i>(color: red.400)</i>
       </span>
+      cryptocurrency-color:aave
+      <Icon name="cryptocurrency-color:aave" />
       <Icon name="mdi:alpha-e" color="red.400" />
       custom:circle
       <Icon name="custom:circle" />
