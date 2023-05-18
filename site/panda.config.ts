@@ -2,7 +2,7 @@ import { defineConfig } from '@pandacss/dev'
 import { cssPicons } from '@css-picons/config'
 import feIconsData from '@iconify-json/fe/icons.json'
 import phIconsData from '@iconify-json/ph/icons.json'
-import fs from 'node:fs/promises'
+import fs from 'node:fs'
 import fetch from 'node-fetch'
 
 const iconPreset = cssPicons({
@@ -13,7 +13,22 @@ const iconPreset = cssPicons({
       'custom',
       {
         circle: '<svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50"></circle></svg>',
-        vite: () => fs.readFile('./public/vite.svg', 'utf-8'),
+        vite: () => fs.readFileSync('./public/vite.svg', { encoding: 'utf-8' }),
+      },
+    ],
+    [
+      'local',
+      //* Load all svgs in a directory
+      () => {
+        const files = fs.readdirSync('./public')
+        const svgFiles = files.filter((n) => n.endsWith('.svg'))
+        if (!svgFiles.length) console.error('No SVG files in path')
+        const iconSet = svgFiles.reduce(
+          async (acc, nxt) =>
+            Object.assign(acc, { [nxt.split('.svg')[0]]: fs.readFileSync(`./public/${nxt}`, { encoding: 'utf-8' }) }),
+          {},
+        )
+        return iconSet
       },
     ],
     [

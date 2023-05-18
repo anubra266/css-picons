@@ -33,6 +33,8 @@ function App() {
       <Icon name="custom:circle" />
       custom:vite
       <Icon name="custom:vite" />
+      loal:vite
+      <Icon name="local:vite" />
       solar:airbuds-outline
       <Icon name="solar:airbuds-outline" />
       fe:check-verified

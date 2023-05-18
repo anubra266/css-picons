@@ -1,11 +1,8 @@
 import type { RecipeConfig, SystemStyleObject } from '@pandacss/types'
 import type iconifyCollections from '@iconify/collections/collections.json'
-import type { Preset as PandaPreset } from '@pandacss/types'
 import type { IconifyJSON } from '@iconify/types'
 
 export { IconifyJSON }
-
-export type Preset = Pick<PandaPreset, 'theme'>
 
 export type CollectionIcon = { collection: string; icon: string; svg: string | null }
 
