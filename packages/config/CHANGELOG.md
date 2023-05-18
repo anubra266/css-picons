@@ -1,5 +1,14 @@
 # @css-picons/config
 
+## 0.0.5
+
+### Patch Changes
+
+- b599663: Improve deep instantiated return type
+- Updated dependencies [b599663]
+  - @css-picons/types@0.0.5
+  - @css-picons/variants@0.0.5
+
 ## 0.0.4
 
 ### Patch Changes

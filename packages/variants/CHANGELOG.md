@@ -1,5 +1,12 @@
 # @css-picons/variants
 
+## 0.0.5
+
+### Patch Changes
+
+- Updated dependencies [b599663]
+  - @css-picons/types@0.0.5
+
 ## 0.0.4
 
 ### Patch Changes
